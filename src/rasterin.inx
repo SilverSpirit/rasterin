@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Import Raster</_name>
+    <id>org.inkscape.placeholder.rasterin</id>
+
+    <dependency type="executable" location="extensions">rasterin.py</dependency>
+    
+    <param name="raster_path" type="string" gui-text="Path">Enter path...</param>
+
+    <effect>
+		<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Rasterin"/>
+		</effects-menu>
+	</effect>
+
+    <script>
+        <command reldir="extensions" interpreter="python">rasterin.py</command>
+    </script>
+</inkscape-extension>
