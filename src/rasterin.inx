@@ -4,13 +4,13 @@
     <id>org.inkscape.placeholder.rasterin</id>
 
     <dependency type="executable" location="extensions">rasterin.py</dependency>
-    
-    <param name="raster_path" type="string" gui-text="Path">Enter path...</param>
+
+    <param name="rasterpath" type="string" gui-text="Path">Enter path...</param>
 
     <effect>
 		<object-type>all</object-type>
 		<effects-menu>
-			<submenu _name="Rasterin"/>
+			<submenu _name="Import Raster"/>
 		</effects-menu>
 	</effect>
 
