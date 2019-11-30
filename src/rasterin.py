@@ -15,6 +15,10 @@ class Rasterin(inkex.Effect):
 
     def effect(self):
         raster_path = self.arg_parser.parse_args().rasterpath
+        if not os.path.exists(raster_path):
+            # raise FileNotFoundError('{} not found!'.format(raster_path))
+            raise inkex.AbortExtension('{} not found!'.format(raster_path))
+            # inkex.errormsg('{} not found!'.format(raster_path))
 
         svg = self.document.getroot()
 
@@ -47,7 +51,7 @@ class Rasterin(inkex.Effect):
             'x': '0',
             'y': '0',
             'preserveAspectRatio': 'None',
-            inkex.addNS('href', 'xlink'): u'data:image/jpeg;base64,'
+            inkex.addNS('href', 'xlink'): u'data:image;base64,'
                                           u'' + image_string.decode()
         }
         node = etree.Element(inkex.addNS('image', 'svg'), attribs)
