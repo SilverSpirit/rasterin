@@ -6,8 +6,9 @@
     <dependency type="executable" location="extensions">rasterin.py</dependency>
 
     <param name="rasterpath" type="string" gui-text="Path">Enter path...</param>
+    <param name="pagenumber" type="string" gui-text="Page">all</param>
 
-    <effect>
+    <effect needs-live-preview="false">
 		<object-type>all</object-type>
 		<effects-menu>
 			<submenu _name="Import Raster"/>
