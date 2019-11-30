@@ -9,15 +9,20 @@ from lxml import etree
 class Rasterin(inkex.Effect):
     def __init__(self):
         inkex.Effect.__init__(self)
-        self.arg_parser.add_argument('-s', '--rasterpath', action='store',
+        self.arg_parser.add_argument('-i', '--rasterpath', action='store',
                                      type=str,
                                      default='None', help='Path to raster')
+        self.arg_parser.add_argument('-p', '--pagenumber', action='store',
+                                     type=str,
+                                     default='all', help='Page number for '
+                                                         'multipage tiffs. '
+                                                         'Default is all.')
 
     def effect(self):
         raster_path = self.arg_parser.parse_args().rasterpath
         if not os.path.exists(raster_path):
             # raise FileNotFoundError('{} not found!'.format(raster_path))
-            raise inkex.AbortExtension('{} not found!'.format(raster_path))
+            raise inkex.AbortExtension('Image not found!')
             # inkex.errormsg('{} not found!'.format(raster_path))
 
         svg = self.document.getroot()
