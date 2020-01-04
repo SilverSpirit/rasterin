@@ -5,8 +5,9 @@
 
     <dependency type="executable" location="extensions">rasterin.py</dependency>
 
-    <param name="rasterpath" type="string" gui-text="Path">Enter path...</param>
-    <param name="pagenumber" type="string" gui-text="Page">all</param>
+    <param name="rasterpath" type="string" gui-text="Path to raster" appearance="full" gui-description ="Path to raster file">Enter path...</param>
+    <param name="firstpage" type="string" gui-text="First Page" gui-description="Page number to start from for multi page tiffs">1</param>
+    <param name="lastpage" type="string" gui-text="Last Page" gui-description="Page number to stop at for multi page tiffs, use 'last' to convert till the last page">last</param>
 
     <effect needs-live-preview="false">
 		<object-type>all</object-type>
